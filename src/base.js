@@ -14,13 +14,13 @@ import 'firebase/firestore'
 // })
 
 const fireApp = firebase.initializeApp({
-    apiKey: "AIzaSyBQtJTB83Itj3MBI1cXtP0gp59h_Z9ekh0",
-    authDomain: "textapp-ecc6b.firebaseapp.com",
-    databaseURL: "https://textapp-ecc6b.firebaseio.com",
-    projectId: "textapp-ecc6b",
-    storageBucket: "textapp-ecc6b.appspot.com",
-    messagingSenderId: "902098712309",
-    appId: "1:902098712309:web:033167eae4500a3d2a37bc",
+    apiKey: "AIzaSyCDUPnBJ_FOk80eGRXFnR3bgd-5kzgYEWw",
+    authDomain: "dev-chat-8f7e1.firebaseapp.com",
+    projectId: "dev-chat-8f7e1",
+    storageBucket: "dev-chat-8f7e1.appspot.com",
+    messagingSenderId: "607992176248",
+    appId: "1:607992176248:web:b037c464831fa183a5978d",
+    measurementId: "G-3J6YX53P23"
 })
 
 export default fireApp;

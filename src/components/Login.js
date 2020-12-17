@@ -108,8 +108,6 @@ const Login = () => {
     
   return (
     <>
-       
-    {/* <button onClick={signInWithGithub}>Sign in with GitHub</button> */}
     <form onSubmit={submitLogin}>
       <TextField
         name="email"
