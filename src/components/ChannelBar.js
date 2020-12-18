@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Divider from '@material-ui/core/Divider';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
 import Typography from '@material-ui/core/Typography';
 import AddIcon from '@material-ui/icons/Add';
 import Modal from "@material-ui/core/Modal";
@@ -54,31 +57,27 @@ const ChannelBar = () => {
   const [modalStyle] = useState(getModalStyle);
   const [formVal, setFormVal] = useState({name: ""});
   const [open, setOpen] = useState(false);
-  const [channels, setChannels] = useState()
+  const [channels, setChannels] = useState([])
   const channelsRef = firestore.collection('channels')
-  let [holder]= useState([])
-  // let mapOfChannels=[]
+  let channelslist=[]
+
+  // useEffect(() => {
+  // firestore.collection('channels').get()
+  //   .then(snapshot => setChannels(...channels, snapshot.data()))
+  //   console.log(channels)
+  // }, [])
+
  
-  
-// useEffect(() =>{
-// const collection= firestore
-// .collection('channels')
-// .onSnapshot((querySnapshot) => {
-//   querySnapshot.forEach((doc) => {
-//       mapOfChannels.push(doc.id)
-//     })
-//     setHolder= holder.push(Object.values(mapOfChannels))
-// })
-
-// },[])
-
-  // useEffect(() => { 
-  //   const unsubscribe = someFirestoreAPICall().onSnapshot(snap => {
-  //     const data = snap.docs.map(doc => doc.data())
-  //     this.setData(data)
-  //   });
-  //   remember to unsubscribe from your realtime listener on unmount or you will create a memory leak
-  //   }, []);
+firestore.collection('channels').onSnapshot((querySnapshot) => {
+  querySnapshot.forEach((doc) => {
+    channelslist.push(doc.id)
+    console.log(doc.id)
+    })
+    channelslist.map(item => (setChannels(item)))
+    console.log("channelslist", channelslist)
+    setChannels(...channels, 'test1')
+    console.log(channels)
+})
 
   const handleOpen = (e) => {
     setOpen(true)
@@ -149,22 +148,24 @@ const ChannelBar = () => {
             </form>
             </div>
 		    </Modal>
-      <div> {holder[0]? holder[0].map((value) => (<p>{value}</p> )):<p>Loading</p>}</div>
-        {/* <List>
-        {setTimeout(() => {holder.length>0? holder.map((value) => (
-           
-              <ListItemText primary= {`${value}` is } />
-            
-          ))
-          :
-          <ListItem button key={23}>
-          <ListItemText primary="What is happening" />
-        </ListItem>
-       }, 1300) 
-     
-       }   </List>*/}
-      
-          
+      <List> 
+        {/* {
+          channels ? channels.map((value) => {
+            return <p>{value}</p> 
+          }) : <p>Loading Channels</p>
+        } */}
+          {channelslist ? channelslist.map((text) => (
+            <ListItem button key={text}>
+              <ListItemText primary={text} />
+            </ListItem>
+          )) : <p> Loading...</p>
+        }
+          {/* {['For the Horde', 'LOFR Stuff', 'Steves House', 'Pablos Den'].map((text, index) => (
+            <ListItem button key={text}>
+              <ListItemText primary={text} />
+            </ListItem>
+          ))} */}
+      </List>
         <Divider />
       </Drawer>
     </div>
