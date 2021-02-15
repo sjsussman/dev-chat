@@ -72,12 +72,12 @@ html{
   display: flex;
 }
 
-/* .senderImage {
+.senderImage {
   margin: 0 auto;
   margin-top: 15%;
   width: 120%;
   margin-left: -8%;
-} */
+}
 
 .channelfix{
   display: inline-block;
