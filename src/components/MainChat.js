@@ -5,6 +5,7 @@ import fireApp from '../base.js'
 
 import '../App.css'
 
+
 const firestore = fireApp.firestore();
 
 
@@ -41,7 +42,7 @@ function ChatMessage(props) {
   return (<>
       <div className={`${messageClass}`}>
       <div className="icon" >
-      <img src={photoURL || "https://image.shutterstock.com/image-vector/profile-placeholder-image-gray-silhouette-260nw-1637863831.jpg" } alt="stock" />
+      <img className='profile-photo' src={photoURL || "https://image.shutterstock.com/image-vector/profile-placeholder-image-gray-silhouette-260nw-1637863831.jpg" } alt="stock" />
       </div>
   <span className='text'>{text}</span>
       

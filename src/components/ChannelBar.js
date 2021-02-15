@@ -59,7 +59,7 @@ const ChannelBar = () => {
   const [open, setOpen] = useState(false);
   const [channels, setChannels] = useState([])
   const channelsRef = firestore.collection('channels')
-  let channelslist=[]
+  // let channelslist=[]
 
   // useEffect(() => {
   // firestore.collection('channels').get()
@@ -68,16 +68,16 @@ const ChannelBar = () => {
   // }, [])
 
  
-firestore.collection('channels').onSnapshot((querySnapshot) => {
-  querySnapshot.forEach((doc) => {
-    channelslist.push(doc.id)
-    console.log(doc.id)
-    })
-    channelslist.map(item => (setChannels(item)))
-    console.log("channelslist", channelslist)
-    setChannels(...channels, 'test1')
-    console.log(channels)
-})
+// firestore.collection('channels').onSnapshot((querySnapshot) => {
+//   querySnapshot.forEach((doc) => {
+//     channelslist.push(doc.id)
+//     console.log(doc.id)
+//     })
+//     channelslist.map(item => (setChannels(item)))
+//     console.log("channelslist", channelslist)
+//     setChannels(...channels, 'test1')
+//     console.log(channels)
+// })
 
   const handleOpen = (e) => {
     setOpen(true)
@@ -154,17 +154,17 @@ firestore.collection('channels').onSnapshot((querySnapshot) => {
             return <p>{value}</p> 
           }) : <p>Loading Channels</p>
         } */}
-          {channelslist ? channelslist.map((text) => (
+          {/* {channelslist ? channelslist.map((text) => (
             <ListItem button key={text}>
               <ListItemText primary={text} />
             </ListItem>
           )) : <p> Loading...</p>
-        }
-          {/* {['For the Horde', 'LOFR Stuff', 'Steves House', 'Pablos Den'].map((text, index) => (
+        } */}
+          {['General', 'React', 'Node', 'Bootstrap'].map((text, index) => (
             <ListItem button key={text}>
               <ListItemText primary={text} />
             </ListItem>
-          ))} */}
+          ))}
       </List>
         <Divider />
       </Drawer>

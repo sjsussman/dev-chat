@@ -31,22 +31,33 @@
 
 .text{
   font-size: 1.3rem;
+  border: 0.5px solid black;
+  border-radius: 10px;
+  margin: 5px;
+  padding: 10px;
 }
 
 .received{
-  color:rgb(8, 31, 105);
   display: flex;
   flex-direction: row-reverse;
+  align-items: center;
+}
+.received .text {
+  background-color: rgb(0,71,171,.7);
 }
 
 .sent {
   display: flex;
-  align-items: right;
+  align-items: center;
+}
+
+.sent .text{
+  background-color: rgba(220,20,60 ,.7);
 }
 
 .icon img{
-  width: 25px;
-  height: 30px;
+  width: 50px;
+  height: 50px;
   border-radius:15px;
 }
 
@@ -54,16 +65,17 @@
   display: flex;
 }
 
-.senderImage {
+/* .senderImage {
   margin: 0 auto;
   margin-top: 15%;
   width: 120%;
   margin-left: -8%;
-}
+} */
 
 .channelfix{
   display: inline-block;
 }
+
 
 @media(max-width: 800px){
   .senderImage {
