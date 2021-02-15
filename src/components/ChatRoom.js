@@ -19,7 +19,7 @@ const Chatroom = () => {
                 <MessageForm />
             </div>
         </div>
-            <ChannelBar />
+            {/* <ChannelBar /> */}
         </>
     )
 }

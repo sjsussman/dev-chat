@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -59,6 +59,9 @@ const ChannelBar = () => {
   const [open, setOpen] = useState(false);
   const [channels, setChannels] = useState([])
   const channelsRef = firestore.collection('channels')
+  // const {channelslist} = useContext(ChannelListContext)
+  // console.log(channelslist)
+  
   // let channelslist=[]
 
   // useEffect(() => {
@@ -160,7 +163,7 @@ const ChannelBar = () => {
             </ListItem>
           )) : <p> Loading...</p>
         } */}
-          {['General', 'React', 'Node', 'Bootstrap'].map((text, index) => (
+          {['General Chat'].map((text, index) => (
             <ListItem button key={text}>
               <ListItemText primary={text} />
             </ListItem>

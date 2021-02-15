@@ -20,12 +20,12 @@ const useStyles = makeStyles({
       display:"flex",
       flexDirection:"row",
       justifyContent:"space-between",
-      width: `calc(100% - 240px)`,
+      // width: `calc(100% - 240px)`,
     }
   });
 
 const navBarLinks = [
-  { title: "Current Channel", path: "/homepage" },
+  { title: "Dev-Chat", path: "/homepage" },
 ];
 
 const NavBar = () => {
@@ -34,12 +34,13 @@ const NavBar = () => {
   return (
     <>
     <AppBar  className={classes.appBarClass}>
-        <Link href={navBarLinks[0].path} key={navBarLinks[0].title} >
+        {/* <Link href={navBarLinks[0].path} key={navBarLinks[0].title} >
             <IconButton color="inherit" className={classes.linkText}>
                 <CodeIcon fontSize="medium" />
                 {navBarLinks[0].title}
             </IconButton>
-        </Link>
+        </Link> */}
+        <h2 style={{marginLeft: '3%'}}>{navBarLinks[0].title}</h2>
       
         <IconButton color="inherit" className={classes.linkText} onClick={() =>{
               auth.signOut()

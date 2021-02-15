@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     display: 'flex',
     flexDirection:"row",
-    justifyContent:'flex-start',
+    justifyContent:'center',
     border: `1px solid ${theme.palette.divider}`,
     flexWrap: 'wrap',
   },

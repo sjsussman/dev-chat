@@ -1,8 +1,14 @@
-.marginLeftAdjustment{
+/* .marginLeftAdjustment{
   display: flex;
   margin-left: 240px;
  
-  }
+  } */
+
+  @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+html{
+  background-color: rgb(245,245,245);
+}
+
 
 .navbar{
   overflow: hidden;
@@ -12,15 +18,15 @@
 }
 .messagebar{
   overflow: hidden;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(51, 30, 54);
   position: fixed; /* Set the navbar to fixed position */
   bottom: 0; /* Position the navbar at the bottom of the page */
-  width: 90%;
+  width: 100%;
 }
 
 .mainchat {
-  margin-top: 100px;
-  margin-bottom: 200px;
+  margin-top: 5%;
+  margin-bottom: 5%;
   margin-left:1%;
   margin-right:2%;
   height: 50%;
@@ -30,11 +36,12 @@
 }
 
 .text{
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   border: 0.5px solid black;
-  border-radius: 10px;
-  margin: 5px;
+  border-radius: 20px;
+  margin: 10px;
   padding: 10px;
+  font-family: 'Roboto', sans-serif;
 }
 
 .received{
@@ -43,7 +50,7 @@
   align-items: center;
 }
 .received .text {
-  background-color: rgb(0,71,171,.7);
+  background-color: rgb(65, 51, 122, .5);
 }
 
 .sent {
@@ -52,12 +59,12 @@
 }
 
 .sent .text{
-  background-color: rgba(220,20,60 ,.7);
+  background-color: rgb(110, 164, 191);
 }
 
 .icon img{
-  width: 50px;
-  height: 50px;
+  width: 75px;
+  height: 75px;
   border-radius:15px;
 }
 
